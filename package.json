@@ -1,0 +1,27 @@
+{
+  "name": "qa-playwright-e2e",
+  "version": "1.0.0",
+  "description": "E2E automation framework with Playwright — Web, API, Mobile browser emulation",
+  "scripts": {
+    "test":             "playwright test",
+    "test:web":         "playwright test tests/web/",
+    "test:api":         "playwright test tests/api/",
+    "test:mobile":      "playwright test --project=mobile-chrome --project=mobile-safari tests/mobile/",
+    "test:e2e":         "playwright test tests/web/challenge.e2e.spec.ts tests/api/api.e2e.spec.ts tests/mobile/mobile.e2e.spec.ts",
+    "test:all-browsers":"playwright test --project=chromium --project=firefox --project=webkit tests/web/",
+    "test:headed":      "playwright test --headed tests/web/",
+    "test:debug":       "playwright test --debug",
+    "report":           "playwright show-report reports/html",
+    "typecheck":        "tsc --noEmit",
+    "lint":             "eslint . --ext .ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "@types/node": "^20.12.0",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
+    "dotenv": "^16.4.5",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5"
+  }
+}
